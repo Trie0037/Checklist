@@ -1,23 +1,26 @@
 {
   "name": "ToDo",
+  "home": "https://trie0037.github.io/Checklist/",
   "version": "0.1.0",
   "private": true,
-  "devDependencies": {
-    "react-scripts": "3.2.0"
-  },
+  "devDependencies": {},
   "dependencies": {
     "axios": "^0.19.0",
+    "gh-pages": "^2.1.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
     "uuid": "^3.3.3",
     "uuid-command-line": "^1.0.1"
   },
-  "engines": {    
-      "node": "~10.15.3",    
-      "npm": "6.4.1"  
+  "engines": {
+    "node": "~10.15.3",
+    "npm": "6.4.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
