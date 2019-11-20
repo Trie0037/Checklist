@@ -5,7 +5,7 @@ export default function About() {
     <React.Fragment>
       <h1>About</h1>
       <p>
-        This is the TodoList app v1.0.0. It is part of a React crash course.
+        This is the Weekly Workout List app v1.0.0. It was created to add specific exercises to be checked off on a weekly basis.
       </p>
     </React.Fragment>
   );

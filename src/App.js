@@ -33,7 +33,9 @@ class App extends Component {
 
   // Delete Todo
   delTodo = id => {
-    axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`).then(res =>
+    axios
+    .delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+    .then(res =>
       this.setState({
         todos: [...this.state.todos.filter(todo => todo.id !== id)]
       })
@@ -53,7 +55,7 @@ class App extends Component {
   render() {
     console.log(this.state.todos);
     return (
-      <Router>
+      <Router>  
         <div className="App">
           <div className="container">
             <Header />
@@ -63,7 +65,7 @@ class App extends Component {
               render={props => (
                 <React.Fragment>
                   <AddTodo addTodo={this.addTodo} />
-                  <Todos
+                  <Todos  //Need unique ID to prevent two children with same key
                     todos={this.state.todos}
                     markComplete={this.markComplete}
                     delTodo={this.delTodo}

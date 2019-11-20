@@ -1,6 +1,6 @@
 {
-  "name": "ToDo",
-  "home": "https://trie0037.github.io/Checklist/",
+  "name": "todo",
+  "home": "https://checklisted.herokuapp.com/",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {},
