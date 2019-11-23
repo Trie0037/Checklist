@@ -4,13 +4,14 @@ import Header from "./components/layout/Header";
 import Todos from "./components/Todos";
 import AddTodo from "./components/AddTodo";
 import About from "./components/pages/About";
-// import uuid from "uuid";
+// import uuidv4 from "uuid/v4";
 import axios from "axios";
 import "./App.css";
 
 class App extends Component {
   state = {
-    todos: []
+    todos: [],
+    id: 0
   };
 
   componentDidMount() {
@@ -44,8 +45,12 @@ class App extends Component {
 
   // Add Todo
   addTodo = title => {
+    let id = Math.floor(Math.random() * Math.floor(1000)) 
+    this.setState({ id:id })
+    console.log(this.state.id)
     axios
       .post("https://jsonplaceholder.typicode.com/todos", {
+        id: this.state.id, 
         title,
         completed: false
       })
@@ -65,7 +70,7 @@ class App extends Component {
               render={props => (
                 <React.Fragment>
                   <AddTodo addTodo={this.addTodo} />
-                  <Todos  //Need unique ID to prevent two children with same key
+                  <Todos key={this.state.id} //Need unique ID to prevent two children with same key
                     todos={this.state.todos}
                     markComplete={this.markComplete}
                     delTodo={this.delTodo}
