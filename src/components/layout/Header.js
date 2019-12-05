@@ -11,6 +11,10 @@ export default function Header() {
       |{" "}
       <Link style={linkStyle} to="/about">
         About
+      </Link>{" "}
+      |{" "}
+      <Link style={linkStyle} to={{ pathname: "https://safe-taiga-87184.herokuapp.com/" }} target="_blank" rel='noopener noreferrer'>
+        Portfolio
       </Link>
     </header>
   );
